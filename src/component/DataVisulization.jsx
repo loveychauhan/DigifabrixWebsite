@@ -87,7 +87,7 @@ const DataVisulization = () => {
               </div>
               <div>
                 <a
-                  href="/app.digifabrix.com"
+                  href="https://app.digifabrix.com"
                   target="blank"
                   className="ml-4 cursor-pointer  text-xs text-slate-400 bg-slate-800 px-3 py-1.5 rounded font-mono border border-slate-700"
                 >

@@ -1,95 +1,174 @@
-const HowItWorks = ({ activeStep, setActiveStep }) => {
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+
+const howItWorksTimeLine = [
+  {
+    number: "01",
+    title: "Assessment & Planning",
+    description: [
+      "We evaluate your production lines and define a tailored digitization roadmap.",
+    ],
+  },
+  {
+    number: "02",
+    title: "Connect & Collect Machine Data",
+    description: [
+      "Seamless integration with machines, PLCs, and sensors.",
+      "Real-time operational data collection.",
+      "No manual data entry required.",
+    ],
+  },
+  {
+    number: "03",
+    title: "Real-Time Monitoring & Dashboards",
+    description: [
+      "Live production line visibility.",
+      "Machine performance charts.",
+      "Shift-level trend tracking.",
+      "Instant exception alerts.",
+    ],
+  },
+  {
+    number: "04",
+    title: "OEE Tracking & Performance Analysis",
+    description: [
+      "Automatic OEE calculation.",
+      "Availability, Performance, and Quality breakdown.",
+      "Root cause analysis tools.",
+    ],
+  },
+  {
+    number: "05",
+    title: "Custom Reporting & Export",
+    description: [
+      "Automated shift and weekly reports.",
+      "Export to PDF, Excel, or CSV.",
+      "Performance comparison dashboards.",
+    ],
+  },
+];
+
+const HowItWorks = () => {
+  const containerRef = useRef(null);
+  const trackRef = useRef(null);
+
+  const [scrollDistance, setScrollDistance] = useState(0);
+
+  // Calculate horizontal scroll distance properly
+  useEffect(() => {
+    const calculate = () => {
+      if (trackRef.current) {
+        const totalWidth = trackRef.current.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        setScrollDistance(totalWidth - viewportWidth);
+      }
+    };
+
+    calculate();
+    window.addEventListener("resize", calculate);
+    return () => window.removeEventListener("resize", calculate);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollDistance]);
+  const smoothX = useSpring(x, { stiffness: 90, damping: 20 });
+  const holdOffset = window.innerHeight * 0.6;
+
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-white via-blue-50/30 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            From setup to full deployment in 48 hours. Our proven methodology
-            ensures seamless integration with your existing systems.
+    <section className="bg-slate-900 text-white px-3">
+      {/* Scroll Container */}
+      <div
+        ref={containerRef}
+        className="relative hidden lg:block"
+        style={{ height: scrollDistance + 2 * window.innerHeight }}
+      >
+        <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
+          {/* Heading */}
+          <div className="pt-24 pb-12 text-center px-6">
+            <h2 className="text-5xl font-semibold">How It Works</h2>
+            <p className="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
+              A structured implementation process designed for seamless
+              integration into your manufacturing environment.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="flex-1 flex items-center ">
+            <motion.div
+              ref={trackRef}
+              style={{
+                x: smoothX,
+              }}
+              className="flex gap-24 px-[10vw]"
+            >
+              {howItWorksTimeLine.map((step) => (
+                <div
+                  key={step.number}
+                  className="flex-shrink-0 w-[65vw] max-w-[900px]"
+                >
+                  <div className="bg-white text-slate-900 rounded-3xl  px-12 py-6 shadow-lg">
+                    <span className="text-sm text-slate-400 tracking-widest">
+                      STEP {step.number}
+                    </span>
+
+                    <h3 className="mt-6 text-3xl font-semibold">
+                      {step.title}
+                    </h3>
+
+                    <ul className="mt-8 space-y-4">
+                      {step.description.map((point, i) => (
+                        <li
+                          key={i}
+                          className="text-lg text-slate-600 flex gap-4"
+                        >
+                          <span className="mt-3 w-2 h-2 rounded-full bg-emerald-500"></span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile / Tablet Carousel */}
+      <div className="lg:hidden px-6 pb-16">
+        <div className="text-center pt-16 pb-10">
+          <h2 className="text-3xl font-semibold">How It Works</h2>
+          <p className="mt-4 text-slate-300">
+            A structured implementation process.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-300 via-teal-400 to-blue-300 hidden lg:block"></div>
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6">
+          {howItWorksTimeLine.map((step) => (
+            <div
+              key={step.number}
+              className="snap-center flex-shrink-0 w-[85%] bg-white text-slate-900 rounded-2xl p-8 shadow-md"
+            >
+              <span className="text-sm text-slate-400 tracking-widest">
+                STEP {step.number}
+              </span>
 
-          <div className="space-y-12 lg:space-y-16">
-            {[
-              {
-                number: "01",
-                title: "Assessment & Planning",
-                description:
-                  "Our team analyzes your production lines and creates a customized digitization roadmap tailored to your needs.",
-              },
-              {
-                number: "02",
-                title: "Hardware Installation",
-                description:
-                  "Deploy IoT sensors and gateways on your production floor. No production downtime required.",
-              },
-              {
-                number: "03",
-                title: "Data Integration",
-                description:
-                  "Connect legacy systems, PLCs, and modern sensors. Our platform bridges all technologies.",
-              },
-              {
-                number: "04",
-                title: "Go Live & Monitoring",
-                description:
-                  "Start tracking OEE, throughput, and downtime in real-time. Full 24/7 support included.",
-              },
-            ].map((step, idx) => (
-              <div
-                key={idx}
-                className="relative cursor-pointer"
-                onClick={() => setActiveStep(idx)}
-              >
-                <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                  {/* Content */}
-                  <div
-                    className={`${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
-                  >
-                    <div
-                      className={`bg-white rounded-xl p-8 border-2 transition-all duration-300 ${
-                        activeStep === idx
-                          ? "border-blue-500 shadow-lg shadow-blue-200"
-                          : "border-slate-200 hover:border-blue-300"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4 mb-4">
-                        {" "}
-                        <span className="text-4xl">{step.icon}</span>
-                        <span className="text-5xl font-bold text-blue-600">
-                          {step.number}
-                        </span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
+              <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
 
-                  {/* Circle indicator */}
-                  <div className="hidden lg:flex lg:order-2 justify-center">
-                    <div className="relative w-16 h-16">
-                      <div className="absolute inset-0 bg-blue-100 rounded-full"></div>
-                      <div
-                        className={`absolute inset-2 rounded-full transition-all duration-300 ${activeStep === idx ? "bg-blue-600 shadow-lg shadow-blue-500/50" : "bg-white border-4 border-blue-300"}`}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+              <ul className="mt-5 space-y-3">
+                {step.description.map((point, i) => (
+                  <li key={i} className="flex gap-3 text-slate-600">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

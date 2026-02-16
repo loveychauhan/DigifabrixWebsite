@@ -18,13 +18,17 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="group flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all">
-            Start Free Trial (30 days){" "}
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white border border-white/40 px-8 py-4 rounded-xl font-bold transition-all">
-            Schedule a Demo
-          </button>
+          <a href="https://app.digifabrix.com/" target="blank">
+            <button className="group flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all">
+              Start Free Trial (30 days){" "}
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </a>
+          <a href="https:digifabrix.com/book-demo" target="blank">
+            <button className="flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white border border-white/40 px-8 py-4 rounded-xl font-bold transition-all">
+              Schedule a Demo
+            </button>
+          </a>
         </div>
 
         <p className="text-blue-100 text-sm mt-8">

@@ -83,7 +83,7 @@ const Navbar = () => {
               target="blank"
               className="bg-slate-900 cursor-pointer text-white px-6 py-2.5 rounded-[10px] font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
             >
-              Sign Up
+              Get Started
             </a>
           </div>
         </div>
@@ -97,14 +97,14 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl py-4 flex flex-col items-center space-y-4 animate-in slide-in-from-top-5">
-          {["Solutions", "Platform", "Industries", "Pricing"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-slate-600 font-medium text-lg"
+          {NAV_ROUTES.map((item) => (
+            <Link
+              key={item.label}
+              to={item.to.toLowerCase()}
+              className="text-slate-500 relative hover:text-blue-500 font-medium transition-colors"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
           <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold">
             Get Started

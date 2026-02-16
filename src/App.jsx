@@ -1,5 +1,4 @@
 import Footer from "./component/Footer";
-import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
 import Solutions from "./page/Solutions";
 import WhyUs from "./component/WhyUs";
@@ -9,6 +8,7 @@ import Testimonials from "./page/Testimonial";
 import { Route, Routes } from "react-router-dom";
 import Career from "./page/Career";
 import ScrollToTop from "./utils/Scroll";
+import Home from "./page/Home";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <ScrollToTop />
       <Routes>
-        <Route index element={<Hero />} />
+        <Route index element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/oee" element={<OEE />} />
         <Route path="/features" element={<Features />} />

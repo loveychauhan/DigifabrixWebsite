@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
               Empowering manufacturers with next-gen Industry 4.0 tools.
-              Real-time insights for a smarter factory.
+              Real-time insights for Link smarter factory.
             </p>
           </div>
 
@@ -26,24 +26,24 @@ const Footer = () => {
             <h4 className="font-bold text-slate-900 mb-4">Solutions</h4>
             <ul className="space-y-2 text-sm text-slate-600">
               <li>
-                <a href="#" className="hover:text-blue-600">
+                <Link to="/solutions/OEE" className="hover:text-blue-600">
                   OEE Monitoring
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600">
-                  SMT Traceability
-                </a>
+                <Link href="/solutions/MES" className="hover:text-blue-600">
+                  MES (Manufacturing Execution System)
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600">
-                  Environmental Sensors
-                </a>
+                <Link to="/solutions/EMS" className="hover:text-blue-600">
+                  Environment Monitoring & Controlling
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600">
-                  Reporting
-                </a>
+                <Link to="/solutions/dojo" className="hover:text-blue-600">
+                  DOJO 2.0
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,9 +52,9 @@ const Footer = () => {
             <h4 className="font-bold text-slate-900 mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-slate-600">
               <li>
-                <a href="#" className="hover:text-blue-600">
+                <Link href="#" className="hover:text-blue-600">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/career" className="hover:text-blue-600">
@@ -62,14 +62,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600">
+                <Link href="" className="hover:text-blue-600">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600">
+                <Link href="#" className="hover:text-blue-600">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,11 +77,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-slate-900 mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-slate-600">
-              <li className="flex items-start gap-2">
+              <li className="flex items-start justify-center gap-2">
                 <MapPin className="h-4  w-4 mt-1 text-blue-600" />
                 <span>
-                  Shiv Nagar Part 2, Gali No. 1 DigiFabrix Technologies Pvt.
-                  Ltd. Rewari, Haryana 123401
+                  Shiv Nagar Part 2, Gali No. 1, Rewari, Haryana 123401
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -95,12 +94,12 @@ const Footer = () => {
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
           <p>© 2026 Digifabrix Technologies Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-slate-900">
+            <Link href="#" className="hover:text-slate-900">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-slate-900">
+            </Link>
+            <Link href="#" className="hover:text-slate-900">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

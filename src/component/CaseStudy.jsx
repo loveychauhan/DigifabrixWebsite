@@ -1,110 +1,83 @@
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { Metric, OEEBar } from "./CaseStudySupport";
 
 const CaseStudy = () => {
   return (
-    <section className="py-20 lg:py-32 bg-slate-900 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
+    <motion.section
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-24 bg-slate-950 relative"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Label */}
+        <div className="text-center mb-16">
+          <p className="text-sm tracking-widest uppercase text-[#f08209]">
+            Case Study
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold text-white">
+            Data-Driven Transformation in Automotive Manufacturing
+          </h2>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6">
-            <div className="inline-block">
-              <span className="text-sm font-semibold text-[#f08209] uppercase tracking-wider">
-                Case Study
-              </span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              32% OEE Improvement in 90 Days
-            </h2>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              A leading automotive parts manufacturer deployed our platform
-              across 8 production lines. Within 3 months, they achieved
-              unprecedented visibility into their operations and eliminated
-              critical bottlenecks.
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <h3 className="text-3xl font-semibold text-white">
+              18% OEE Increase in 12 Weeks
+            </h3>
+
+            <p className="text-lg text-slate-400 leading-relaxed">
+              A mid-sized automotive components manufacturer integrated
+              Digifabrix across 42 CNC machines. Within three months, real-time
+              visibility and automated downtime analysis transformed operational
+              performance.
             </p>
 
-            {/* Key Metrics */}
-            <div className="grid grid-cols-2 gap-6 pt-8">
-              <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-                <p className="text-4xl font-bold text-[#f08209] mb-2">32%</p>
-                <p className="text-sm text-slate-400">OEE Increase</p>
+            {/* Context */}
+            <div className="grid grid-cols-2 gap-6 pt-6 text-sm text-slate-400">
+              <div>
+                Machines Connected: <span className="text-white">42</span>
               </div>
-              <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-                <p className="text-4xl font-bold text-[#f08209] mb-2">$2.4M</p>
-                <p className="text-sm text-slate-400">Annual Savings</p>
+              <div>
+                Deployment Time: <span className="text-white">36 Hours</span>
               </div>
-              <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-                <p className="text-4xl font-bold text-[#f08209] mb-2">89h</p>
-                <p className="text-sm text-slate-400">Downtime Eliminated</p>
+              <div>
+                Operators Trained: <span className="text-white">120</span>
               </div>
-              <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-                <p className="text-4xl font-bold text-[#f08209] mb-2">3mo</p>
-                <p className="text-sm text-slate-400">ROI Achieved</p>
+              <div>
+                Shifts Monitored: <span className="text-white">3</span>
               </div>
             </div>
 
-            <button className="group flex items-center gap-2 bg-[#f08209] hover:bg-[#d67f22] text-white px-8 py-4 rounded-xl font-bold transition-all mt-8 shadow-lg shadow-teal-500/30">
-              Read Full Case Study{" "}
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            {/* Metrics */}
+            <div className="grid grid-cols-2 gap-6 pt-8">
+              <Metric number="+18%" label="OEE Improvement" />
+              <Metric number="-27%" label="Unplanned Downtime" />
+              <Metric number="+22%" label="Productivity Gain" />
+              <Metric number="4 Months" label="ROI Achieved" />
+            </div>
+
+            <button className="group inline-flex items-center gap-2 border border-[#f08209] text-[#f08209] px-7 py-3 rounded-lg hover:bg-[#f08209] hover:text-white transition-all">
+              View Full Case Study
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
-          {/* Visual - OEE Improvement Chart */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 to-blue-400 rounded-2xl blur-3xl opacity-20 -z-10"></div>
+          {/* Right Visual */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-10">
+            <h4 className="text-white font-semibold mb-8">OEE Progression</h4>
 
-            <div className="bg-slate-800 rounded-2xl border border-slate-700 p-8">
-              <h3 className="text-white font-bold mb-6">OEE Progression</h3>
-
-              {/* Chart bars */}
-              <div className="space-y-4">
-                {[
-                  { month: "Baseline", value: 58, color: "bg-slate-600" },
-                  { month: "Month 1", value: 65, color: "bg-blue-500" },
-                  { month: "Month 2", value: 74, color: "bg-[#f08209]" },
-                  { month: "Month 3", value: 90, color: "bg-[#f08209]" },
-                ].map((item, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-semibold text-slate-300">
-                        {item.month}
-                      </span>
-                      <span className="text-lg font-bold text-[#f08209]">
-                        {item.value}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-slate-700 h-3 rounded-full overflow-hidden">
-                      <div
-                        className={`${item.color} h-full rounded-full transition-all duration-500`}
-                        style={{ width: `${item.value}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom stats */}
-              <div className="mt-8 pt-8 border-t border-slate-700 grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">
-                    Operator Engagement
-                  </p>
-                  <p className="text-2xl font-bold text-[#f08209]">+87%</p>
-                </div>
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">
-                    Maintenance Efficiency
-                  </p>
-                  <p className="text-2xl font-bold text-[#f08209]">+64%</p>
-                </div>
-              </div>
-            </div>
+            <OEEBar label="Baseline" value={62} />
+            <OEEBar label="Month 1" value={69} />
+            <OEEBar label="Month 2" value={74} />
+            <OEEBar label="Month 3" value={80} />
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
