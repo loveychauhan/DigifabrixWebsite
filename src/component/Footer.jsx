@@ -1,4 +1,4 @@
-import { Globe, MapPin, Phone } from "lucide-react";
+import { Globe, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -16,9 +16,14 @@ const Footer = () => {
                 Digifabrix
               </span>
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Empowering manufacturers with next-gen Industry 4.0 tools.
-              Real-time insights for Link smarter factory.
+            <p className="text-slate-500 text-[12px] leading-relaxed">
+              DigiFabrix is a digital manufacturing platform that helps
+              factories implement shopfloor digitization, OEE monitoring, and
+              Industry 4.0 automation. Our platform provides real-time
+              production monitoring, manufacturing execution systems (MES),
+              workforce intelligence with DOJO 2.0, product traceability, and
+              digital checksheets to improve productivity and operational
+              efficiency.
             </p>
           </div>
 

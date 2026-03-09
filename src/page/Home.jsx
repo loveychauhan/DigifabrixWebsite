@@ -16,19 +16,49 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Industry 4.0 Platform for OEE Monitoring & Shopfloor Digitization |
-          DigiFabrix
+          DigiFabrix | OEE Monitoring Software & Shopfloor Digitization Platform
         </title>
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "DigiFabrix Manufacturing Platform",
+              "applicationCategory": "Manufacturing Software",
+              "operatingSystem": "Web",
+              "description": "Industry 4.0 platform for shopfloor digitization and OEE monitoring",
+              "url": "https://digifabrix.com"
+            }
+          `}
+        </script>
+
         <meta
           name="description"
-          content="DigiFabrix provides Industry 4.0 solutions including real-time OEE monitoring, shopfloor digitization, workforce intelligence, MES and manufacturing analytics."
+          content="DigiFabrix provides OEE monitoring software, manufacturing execution systems (MES), shopfloor digitization, Industry 4.0 solutions, and workforce intelligence platforms for smart factories."
         />
+
         <meta
           name="keywords"
-          content="OEE monitoring, shopfloor digitization, industry automation, manufacturing analytics, workforce management system"
+          content="OEE monitoring software, shopfloor digitization, manufacturing execution system, digital manufacturing solutions, IIoT platform, Industry 4.0"
         />
+
+        <meta name="robots" content="index, follow" />
+
+        <link rel="canonical" href="https://digifabrix.com/" />
+
+        <meta property="og:title" content="DigiFabrix Industry 4.0 Platform" />
+        <meta
+          property="og:description"
+          content="Smart factory platform for shopfloor digitization, manufacturing analytics and OEE monitoring."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://digifabrix.com/" />
+
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <div className="bg-white">
+
+      <main className="bg-white">
         {/* ==================== HERO SECTION ==================== */}
         <section
           id="home"
@@ -46,20 +76,28 @@ const Home = () => {
                   Still Managing Production with Spreadsheets?
                 </span>
               </h1>
-              <h2 className="text-lg lg:text-xl text-slate-600 mx-auto  max-w-2xl leading-relaxed">
-                Upgrade to real-time factory intelligence with Digifabrix —
-                monitor OEE, track downtime, and optimize performance from one
-                unified dashboard.
-              </h2>
+              <p className="text-lg lg:text-xl text-slate-600 mx-auto  max-w-2xl leading-relaxed">
+                DigiFabrix is an Industry 4.0 manufacturing platform that
+                enables real-time OEE monitoring, shopfloor digitization, and
+                production analytics.
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4 ">
-              <a href="https://app.digifabrix.com/" target="blank">
+              <a
+                href="https://app.digifabrix.com/"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 <button className=" font-semibold  group flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4   rounded-xl   hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300  ">
                   Start Free Trial
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </a>
-              <a href="http://digifabrix.com/book-demo" target="blank">
+              <a
+                href="http://digifabrix.com/book-demo"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 <button className="flex items-center justify-center gap-2 bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-blue-300 transition-all">
                   Book Demo
                 </button>
@@ -107,6 +145,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        
         {/* video */}
 
         <VideoComponent />
@@ -120,7 +159,7 @@ const Home = () => {
         <OperatorEngagement />
         {/* ==================== CTA SECTION ==================== */}
         <CTASection />
-      </div>
+      </main>
     </>
   );
 };

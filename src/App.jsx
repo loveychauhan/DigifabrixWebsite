@@ -19,8 +19,11 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
-        <Route path="/solutions/oee" element={<OEE />} />
-        <Route path="/solutions/dojo" element={<DojoLanding />} />
+        <Route path="/solutions/oee-monitoring-software" element={<OEE />} />
+        <Route
+          path="/solutions/dojo-workforce-intelligence"
+          element={<DojoLanding />}
+        />
         <Route path="/features" element={<Features />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/whyus" element={<WhyUs />} />

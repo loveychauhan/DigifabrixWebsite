@@ -2,7 +2,8 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SolutionsList from "./SolutionsList";
-import digifabrixLogo from "/digifabrixLogo.png";
+import favicon from "/favicon.ico";
+import { useRef } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
     { label: "Testimonials", to: "/testimonials" },
   ];
 
-  let timeout;
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -27,19 +28,25 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all ease-in-out duration-300 ${scrolled ? "backdrop-blur-lg shadow-md py-4" : "bg-transparent py-4"}`}
+      className={`fixed w-full z-50 transition-all text-sm ease-in-out duration-300 py-2 ${scrolled ? "backdrop-blur-xl shadow-md " : "bg-transparent "}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <div className="flex items-center gap-2 cursor-pointer">
-          <div className=" p-1 rounded-lg">
-            <img className="h-8 w-8" src={digifabrixLogo} alt="logo" />
+        <Link to="/">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <div className=" p-1 rounded-lg">
+              <img
+                className="h-8 w-8"
+                src={favicon}
+                alt="DigiFabrix digital manufacturing platform logo"
+              />
+            </div>
+            <span
+              className={`text-2xl font-bold tracking-tight text-[rgb(0,86,169)] `}
+            >
+              Digifabrix
+            </span>
           </div>
-          <span
-            className={`text-2xl font-bold tracking-tight text-[rgb(0,86,169)] `}
-          >
-            Digifabrix
-          </span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-8">
           {NAV_ROUTES.map((item) => {
@@ -49,11 +56,14 @@ const Navbar = () => {
                   <div
                     className="relative group"
                     onMouseEnter={() => {
-                      clearTimeout(timeout);
+                      clearTimeout(timeoutRef.current);
                       setIsHovered(true);
                     }}
                     onMouseLeave={() => {
-                      timeout = setTimeout(() => setIsHovered(false), 150);
+                      timeoutRef.current = setTimeout(
+                        () => setIsHovered(false),
+                        150,
+                      );
                     }}
                   >
                     <Link
@@ -69,7 +79,7 @@ const Navbar = () => {
                   <Link
                     key={item.label}
                     to={item.to.toLowerCase()}
-                    className="text-slate-500 relative hover:text-blue-500 font-medium transition-colors"
+                    className="text-slate-500 relative text-sm hover:text-blue-500 font-medium transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -82,7 +92,7 @@ const Navbar = () => {
             <a
               href="https://app.digifabrix.com/"
               target="blank"
-              className="bg-slate-900 cursor-pointer text-white px-6 py-2.5 rounded-[10px] font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
+              className="bg-black cursor-pointer text-white px-6 py-2.5 rounded-[10px] font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
             >
               Get Started
             </a>
@@ -101,8 +111,8 @@ const Navbar = () => {
           {NAV_ROUTES.map((item) => (
             <Link
               key={item.label}
-              to={item.to.toLowerCase()}
-              className="text-slate-500 relative hover:text-blue-500 font-medium transition-colors"
+              to={item.to}
+              className="text-slate-500 text-sm relative hover:text-blue-500 font-medium transition-colors"
             >
               {item.label}
             </Link>

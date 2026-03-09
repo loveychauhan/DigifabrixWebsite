@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://digifabrix.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/solutions</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/solutions/oee-monitoring-software</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/solutions/manufacturing-execution-system</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/solutions/shopfloor-digitization</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/solutions/dojo-workforce-intelligence</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digifabrix.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
