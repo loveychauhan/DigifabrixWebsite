@@ -59,8 +59,8 @@ const HowItWorks = () => {
     const calculate = () => {
       if (trackRef.current) {
         const totalWidth = trackRef.current.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        setScrollDistance(totalWidth - viewportWidth);
+        const viewportWidth = window.innerWidth * 0.01;
+        setScrollDistance(totalWidth + viewportWidth);
       }
     };
 
@@ -76,7 +76,6 @@ const HowItWorks = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -scrollDistance]);
   const smoothX = useSpring(x, { stiffness: 90, damping: 20 });
-  const holdOffset = window.innerHeight * 0.6;
 
   return (
     <section className="bg-slate-900 text-white px-3">
@@ -84,7 +83,7 @@ const HowItWorks = () => {
       <div
         ref={containerRef}
         className="relative hidden lg:block"
-        style={{ height: scrollDistance + 2 * window.innerHeight }}
+        style={{ height: scrollDistance }}
       >
         <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
           {/* Heading */}
