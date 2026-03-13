@@ -22,7 +22,7 @@ const CaseStudy = () => {
             <h3 className="text-3xl font-semibold text-white">
               18% OEE Increase in 12 Weeks
             </h3>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg mt-4 text-slate-400 leading-relaxed">
               A mid-sized automotive components manufacturer integrated
               Digifabrix across 42 CNC machines. Within three months, real-time
               visibility and automated downtime analysis transformed operational

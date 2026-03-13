@@ -8,6 +8,8 @@ import CTASection from "../component/CTASection";
 import CountUp from "react-countup";
 import VideoComponent from "../component/VideoComponent";
 import { Helmet } from "react-helmet-async";
+import LogoMarquee from "../component/LogoMarquee";
+import DigifabrixHomeIntro from "../component/DigifabrixHomeIntro";
 
 const Home = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -16,63 +18,70 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          DigiFabrix | OEE Monitoring Software & Shopfloor Digitization Platform
+          OEE Monitoring Software & Shopfloor Digitization | DigiFabrix
         </title>
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "DigiFabrix Manufacturing Platform",
-              "applicationCategory": "Manufacturing Software",
-              "operatingSystem": "Web",
-              "description": "Industry 4.0 platform for shopfloor digitization and OEE monitoring",
-              "url": "https://digifabrix.com"
-            }
-          `}
-        </script>
 
         <meta
           name="description"
-          content="DigiFabrix provides OEE monitoring software, manufacturing execution systems (MES), shopfloor digitization, Industry 4.0 solutions, and workforce intelligence platforms for smart factories."
+          content="DigiFabrix provides OEE monitoring software, manufacturing execution systems (MES), shopfloor digitization and Industry 4.0 analytics for smart factories."
         />
-
-        <meta
-          name="keywords"
-          content="OEE monitoring software, shopfloor digitization, manufacturing execution system, digital manufacturing solutions, IIoT platform, Industry 4.0"
-        />
-
-        <meta name="robots" content="index, follow" />
 
         <link rel="canonical" href="https://digifabrix.com/" />
 
-        <meta property="og:title" content="DigiFabrix Industry 4.0 Platform" />
+        <meta
+          property="og:title"
+          content="OEE Monitoring Software & Shopfloor Digitization | DigiFabrix"
+        />
+
         <meta
           property="og:description"
           content="Smart factory platform for shopfloor digitization, manufacturing analytics and OEE monitoring."
         />
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://digifabrix.com/" />
+        <meta property="og:site_name" content="DigiFabrix" />
+        <meta
+          property="og:image"
+          content="https://digifabrix.com/og-image.png"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="OEE Monitoring Software | DigiFabrix"
+        />
+        <meta
+          name="twitter:description"
+          content="Industry 4.0 platform for shopfloor digitization and manufacturing analytics."
+        />
+        <meta
+          name="twitter:image"
+          content="https://digifabrix.com/og-image.png"
+        />
+
+        <script type="application/ld+json">
+          {`
+            {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "DigiFabrix Manufacturing Platform",
+            "applicationCategory": "Manufacturing Software",
+            "operatingSystem": "Web",
+            "description": "Industry 4.0 platform for shopfloor digitization and OEE monitoring",
+            "url": "https://digifabrix.com"
+            }
+          `}
+        </script>
       </Helmet>
 
-      <main className="bg-white">
+      <main className="bg-slate-100">
         {/* ==================== HERO SECTION ==================== */}
-        <section
-          id="home"
-          className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-          </div>
-
+        <section id="home" className="pt-24 pb-20 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="space-y-8  text-center">
-              <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight  ">
-                <span className="tracking-tight  text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
-                  {" "}
+            <div className="space-y-8 text-center">
+              <h1 className="text-5xl lg:text-7xl font-bold ">
+                <span className="tracking-tight text-transparent px-2 bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
                   Still Managing Production with Spreadsheets?
                 </span>
               </h1>
@@ -87,65 +96,53 @@ const Home = () => {
                 href="https://app.digifabrix.com/"
                 target="blank"
                 rel="noopener noreferrer"
+                className=" font-semibold  group flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4   rounded-xl   hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300  "
               >
-                <button className=" font-semibold  group flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4   rounded-xl   hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300  ">
-                  Start Free Trial
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                Start Free Trial
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="http://digifabrix.com/book-demo"
                 target="blank"
                 rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-blue-300 transition-all"
               >
-                <button className="flex items-center justify-center gap-2 bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-blue-300 transition-all">
-                  Book Demo
-                </button>
+                Book Demo
               </a>
             </div>
-            {/* Trust indicators */}
-            <div className="pt-8 border-t border-slate-200 items-center justify-center flex gap-32">
-              <div>
-                <p className="text-2xl font-bold text-slate-900">
-                  <CountUp
-                    end={500}
-                    duration={2}
-                    enableScrollSpy
-                    scrollSpyOnce
-                  />
-                  +
-                </p>
-                <h2 className="text-sm text-slate-600">Factories Digitized</h2>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-slate-900">
-                  {" "}
-                  <CountUp
-                    end={25}
-                    duration={2}
-                    enableScrollSpy
-                    scrollSpyOnce
-                  />
-                  %
-                </p>
-                <p className="text-sm text-slate-600">Avg. OEE Improvement</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-slate-900">
-                  <CountUp
-                    end={48}
-                    duration={2}
-                    enableScrollSpy
-                    scrollSpyOnce
-                  />
-                  h
-                </p>
-                <p className="text-sm text-slate-600">Time to Deploy</p>
-              </div>
+            <p className="text-center leading-0.5 text-slate-500 text-[14px]">
+              30-Day Free Trail. Cancel anytime
+            </p>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="pt-10  border-slate-200 items-center justify-center flex gap-32">
+            <div>
+              <p className="text-2xl font-bold text-slate-900">
+                <CountUp end={500} duration={2} enableScrollSpy scrollSpyOnce />
+                +
+              </p>
+              <h2 className="text-sm text-slate-600">Factories Digitized</h2>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-slate-900">
+                {" "}
+                <CountUp end={25} duration={2} enableScrollSpy scrollSpyOnce />%
+              </p>
+              <p className="text-sm text-slate-600">Avg. OEE Improvement</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-slate-900">
+                <CountUp end={48} duration={2} enableScrollSpy scrollSpyOnce />h
+              </p>
+              <p className="text-sm text-slate-600">Time to Deploy</p>
             </div>
           </div>
         </section>
-        
+        {/* Brands Marquee */}
+        <LogoMarquee />
+
+        <DigifabrixHomeIntro />
         {/* video */}
 
         <VideoComponent />

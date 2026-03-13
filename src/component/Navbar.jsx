@@ -11,7 +11,6 @@ const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const NAV_ROUTES = [
-    { label: "Home", to: "/" },
     { label: "Solutions", to: "/solutions" },
     { label: "OEE", to: "/solutions/oee" },
     { label: "Features", to: "/features" },
@@ -124,6 +123,6 @@ const Navbar = () => {
       )}
     </nav>
   );
-};
+}; 
 
 export default Navbar;
