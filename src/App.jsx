@@ -1,19 +1,20 @@
 import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import Solutions from "./page/Solutions";
-import WhyUs from "./component/WhyUs";
 import OEE from "./page/OEE";
-import Features from "./page/Feature";
-import Testimonials from "./page/Testimonial";
+import Blog from "./page/Blog";
+import About from "./page/About";
 import { Route, Routes } from "react-router-dom";
 import Career from "./page/Career";
 import ScrollToTop from "./utils/Scroll";
 import Home from "./page/Home";
 import DojoLanding from "./page/DOJO";
+import Price from "./page/Price";
+import EnvironmentMonitoringSystem from "./page/EnvironmentMonitoringSystem";
 
 function App() {
   return (
-    <div className="font-sans antialiased text-slate-900 bg-white selection:bg-blue-100 selection:text-blue-900">
+    <div>
       <Navbar />
       <ScrollToTop />
       <Routes>
@@ -24,10 +25,15 @@ function App() {
           path="/solutions/dojo-workforce-intelligence"
           element={<DojoLanding />}
         />
-        <Route path="/features" element={<Features />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/whyus" element={<WhyUs />} />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="/solutions/environment-monitoring-system"
+          element={<EnvironmentMonitoringSystem />}
+        />
+        <Route path="/blogs" element={<Blog />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/price" element={<Price />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </div>

@@ -1,255 +1,176 @@
 "use client";
-import {
-  ArrowRight,
-  Sparkles,
-  Users,
-  Lightbulb,
-  Target,
-  Zap,
-} from "lucide-react";
-import carrerHeroImage from "../assets/featuresAssets/carrerHeroImage.jpeg";
+
+import { Users, Target, Lightbulb, Zap } from "lucide-react";
+// import carrerHeroImage from "../assets/featuresAssets/carrerHeroImage.jpeg";
+import carrerHeroImage from "/digifabrixLogo.svg";
 import digifabrixTeam from "../assets/digifabrixTeam.jpg";
 
-const jobOpenings = [
+const values = [
   {
-    title: "Frontend Developer (React)",
-    location: "NCR / On-site",
-    type: "Full Time",
-    desc: "Build scalable UI using React, Tailwind, and modern frontend tools.",
-    icon: Sparkles,
-  },
-  {
-    title: "Backend Developer (Node.js)",
-    location: "NCR / On-site",
-    type: "Full Time",
-    desc: "Design APIs, databases, and scalable backend systems.",
-    icon: Zap,
-  },
-];
-
-const whyWorkWithUs = [
-  {
-    title: "Real-World Impact",
-    desc: "Your work directly improves how factories run — increasing efficiency, reducing waste, and enabling smarter decisions in real time.",
+    title: "Ownership",
+    desc: "We trust people to take responsibility and drive meaningful outcomes.",
     icon: Target,
   },
   {
-    title: "Modern Tech Stack",
-    desc: "Work on modern tech stacks involving IoT, data analytics, cloud platforms, automation, and MES systems.",
-    icon: Zap,
-  },
-  {
-    title: "Collaborative Culture",
-    desc: "We believe great products are built by strong teams. You'll collaborate with engineers, product thinkers, and domain experts who value openness and learning.",
-    icon: Users,
-  },
-  {
-    title: "Growth & Learning",
-    desc: "We encourage ownership, continuous learning, and experimentation. Your ideas matter, and your growth matters even more.",
+    title: "Curiosity",
+    desc: "We encourage asking questions, learning fast, and exploring new ideas.",
     icon: Lightbulb,
   },
   {
-    title: "Real-World Exposure",
-    desc: "Get hands-on experience with real manufacturing environments, real machines, and real challenges — not just theory.",
-    icon: Target,
+    title: "Impact",
+    desc: "Our work improves how real factories operate and make decisions.",
+    icon: Zap,
+  },
+  {
+    title: "Teamwork",
+    desc: "Great products are built through collaboration and shared goals.",
+    icon: Users,
   },
 ];
 
-// Reusable Components
-const h2 = ({ children, className = "" }) => (
-  <h2
-    className={`text-balance text-3xl font-bold leading-tight md:text-5xl lg:text-6xl ${className}`}
-  >
-    {children}
-  </h2>
-);
+const perks = [
+  "Work on real industrial problems",
+  "Modern tech stack (React, Node, Cloud)",
+  "Direct exposure to manufacturing technology",
+  "Opportunity to grow with a fast-moving startup",
+  "Ownership and freedom to experiment",
+];
 
-const p = ({ children, className = "" }) => (
-  <p className={`text-balance text-lg text-slate-600 md:text-xl ${className}`}>
-    {children}
-  </p>
-);
-
-const BenefitCard = ({ title, desc, icon: Icon }) => (
-  <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:border-blue-400 hover:shadow-xl">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-    <div className="relative">
-      <div className="mb-4 inline-flex rounded-lg bg-blue-100 p-3 text-blue-600">
-        <Icon className="h-6 w-6" />
-      </div>
-      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-      <p className="mt-3 text-slate-600 leading-relaxed">{desc}</p>
-    </div>
+const ValueCard = ({ icon: Icon, title, desc }) => (
+  <div className="border border-slate-200 rounded-xl p-6 bg-white">
+    <Icon className="h-6 w-6 text-blue-600 mb-3" />
+    <h3 className="font-semibold text-lg text-slate-900">{title}</h3>
+    <p className="text-slate-600 mt-2">{desc}</p>
   </div>
 );
-
-const JobCard = ({ job }) => {
-  return (
-    <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:border-blue-400 hover:shadow-2xl">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="relative flex flex-col gap-4 p-6 sm:p-8 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-slate-900">{job.title}</h3>
-          <p className="mt-2 text-slate-600">{job.desc}</p>
-          <div className="mt-4 flex gap-3 text-sm text-slate-500">
-            <span className="inline-block px-3 py-1 rounded-full bg-slate-100">
-              {job.location}
-            </span>
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
-              {job.type}
-            </span>
-          </div>
-        </div>
-        <a
-          href="#apply"
-          className="group/btn mt-4 sm:mt-0 sm:shrink-0 inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg sm:px-8"
-        >
-          Apply Now
-          <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-        </a>
-      </div>
-    </div>
-  );
-};
 
 export default function CareerPage() {
   return (
     <main className="bg-white text-slate-900">
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-[#0d1019] text-white">
-        <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-8 px-6 py-16 md:flex-row md:gap-12 md:py-28 lg:px-8">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
-              Build the Future With Us
+      {/* HERO */}
+      <section className="bg-[#0d1019] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+              Join Our Team
             </h1>
-            <p className="mt-4 text-slate-300 md:mt-6 md:text-lg">
-              We're a team of engineers, designers, and innovators solving real
-              industrial problems with modern technology.
+
+            <p className="mt-5 text-slate-300 text-lg">
+              At DigiFabrix we are building technology that helps factories
+              become smarter, more efficient, and more connected. If you enjoy
+              solving real-world engineering problems, you’ll feel at home here.
             </p>
+
+            <div className="my-10 font-medium  cursor-pointer">
+              <a
+                href="https://www.linkedin.com/company/digifabrix-technologies-private-limited"
+                target="blank"
+                rel="noopener noreferrer"
+                className=" bg-slate-100 text-slate-700 border-1 border-slate-700 px-6 py-3 rounded-[10px] "
+              >
+                See Open Positions
+              </a>
+            </div>
           </div>
 
           <img
-            className="w-full rounded-xl object-cover md:w-[480px]"
-            src={carrerHeroImage || "/placeholder.svg"}
+            src={carrerHeroImage}
             alt="DigiFabrix team"
+            className="rounded-lg object-cover"
           />
-        </div>
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-            className="w-full h-[80px]"
-          >
-            <path d="M0,120 L1440,30 L1440,180 L0,120 Z" fill="#f8fafc" />
-          </svg>
         </div>
       </section>
 
-      {/* ================= MISSION ================= */}
-      <section className="mx-auto  max-w-7xl px-6 py-16 md:py-20 lg:px-8">
-        <h2 className="font-bold text-2xl md:text-5xl mb-6 md:mb-8 leading-tight max-w-[920px] md:text-center md:mx-auto">
-          A Passionate Team Behind a Trusted Product
+      {/* MISSION */}
+      <section className="max-w-5xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Building the Future of Smart Manufacturing
         </h2>
-        <p className="mx-auto text-center text-xl max-w-[720px] ">
-          At DigiFabrix, we're transforming the way factories operate by
-          bringing intelligence, visibility, and automation to the shop floor.
-          We work at the intersection of manufacturing, data, and technology,
-          helping industries move toward Industry 4.0.
+
+        <p className="text-lg text-slate-600">
+          DigiFabrix helps manufacturers move from manual processes to
+          data-driven operations. Our platform brings visibility to machines,
+          production lines, and factory operations so teams can make better
+          decisions in real time.
         </p>
       </section>
 
-      {/* ================= WHY US ================= */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
-        <h2 className="font-bold text-2xl md:text-5xl mb-6 md:mb-8 leading-tight max-w-[920px] md:text-center md:mx-auto">
-          Why Work With Us?
+      {/* VALUES */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+          Our Values
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {whyWorkWithUs.map((item) => (
-            <BenefitCard key={item.title} {...item} />
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {values.map((v) => (
+            <ValueCard key={v.title} {...v} />
           ))}
         </div>
       </section>
 
-      {/* ================= LIFE AT DIGIFABRIX ================= */}
-      <section className="relative overflow-hidden bg-black px-6 py-16 text-white md:py-28">
-        <div className="mx-auto max-w-[1300px] lg:px-8">
-          <h2 className="font-bold text-2xl md:text-5xl mb-6 md:mb-8 leading-tight max-w-[920px] md:text-center md:mx-auto">
+      {/* WHAT WE OFFER */}
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            What We Offer
+          </h2>
+
+          <ul className="space-y-4 text-lg text-slate-700">
+            {perks.map((perk) => (
+              <li key={perk} className="flex items-start gap-3">
+                <span className="text-blue-600 mt-1">•</span>
+                {perk}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* LIFE AT DIGIFABRIX */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <img
+          src={digifabrixTeam}
+          alt="Life at DigiFabrix"
+          className="rounded-lg object-cover"
+        />
+
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Life at DigiFabrix
           </h2>
 
-          <div className="flex flex-col w-full gap-8 lg:flex-row lg:items-center lg:gap-12">
-            <img
-              className="w-full rounded-xl object-cover lg:w-1/2"
-              src={digifabrixTeam || "/placeholder.svg"}
-              alt="Company culture"
-            />
+          <p className="text-slate-600 mb-4">
+            We are a small but passionate team working at the intersection of
+            manufacturing, data, and software engineering.
+          </p>
 
-            <div className="space-y-4 lg:w-1/2">
-              <p className="text-slate-300 md:text-lg">
-                At DigiFabrix, we value:
-              </p>
-              <ul className="space-y-2 text-slate-300">
-                <li>• Ownership over hierarchy</li>
-                <li>• Curiosity over comfort zones</li>
-                <li>• Outcomes over hours</li>
-                <li>• Team success over individual wins</li>
-              </ul>
-              <p className="text-slate-300 md:text-lg">
-                We foster a culture where innovation is encouraged, questions
-                are welcomed, and effort is recognized.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-            className="w-full h-[80px]"
-          >
-            <path d="M0,120 L1440,30 L1440,180 L0,120 Z" fill="#f8fafc" />
-          </svg>
+          <p className="text-slate-600">
+            Our work environment encourages ownership, experimentation, and
+            collaboration. Everyone contributes ideas, and everyone has the
+            opportunity to grow.
+          </p>
         </div>
       </section>
 
-      {/* ================= OPEN POSITIONS ================= */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
-        <h2 className="font-bold text-2xl md:text-5xl mb-6 md:mb-8 leading-tight max-w-[920px] md:text-center md:mx-auto">
-          Open Positions
-        </h2>
-        <div className="space-y-4">
-          {jobOpenings.map((job) => (
-            <JobCard key={job.title} job={job} />
-          ))}
-        </div>
-      </section>
+      {/* HOW TO APPLY */}
+      <section className="max-w-3xl mx-auto px-6 pb-24 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">How to Apply</h2>
 
-      {/* ================= APPLY FORM ================= */}
-      <section
-        id="apply"
-        className="mx-auto max-w-3xl scroll-mt-24 px-6 pb-16 md:pb-28 lg:px-8"
-      >
-        <h2 className="font-bold text-2xl md:text-5xl mb-6 md:mb-8 leading-tight max-w-[920px] md:text-center md:mx-auto">
-          How to Apply
-        </h2>
-        <p className="text-center my-4">
-          If you feel like you’re a good fit, we’d love to hear from you! You
-          can view all our open positions on our{" "}
-          <a
-            className="text-blue-500"
-            href="https://www.linkedin.com/company/digifabrix-technologies-private-limited/"
-          >
-            LinkedIn
-          </a>{" "}
-          page. However, if none of these roles seem right for you but you’re
-          passionate about what we do and want to be part of our team, please
-          send us your resume and let us know why you want to join us.
+        <p className="text-slate-600 mb-6">
+          If you're passionate about building technology for the manufacturing
+          industry, we'd love to hear from you.
         </p>
-        <p className="text-[14px] italic text-center">
-          send us your resume at{" "}
-          <span className="font-semibold">sales@digifabrix.com</span>
+
+        <p className="text-slate-600 mb-6">
+          Send your resume and a short note about yourself to:
+        </p>
+
+        <p className="text-lg font-semibold text-blue-600">
+          careers@digifabrix.com
+        </p>
+
+        <p className="text-sm text-slate-500 mt-4">
+          You can also follow us on LinkedIn for future opportunities.
         </p>
       </section>
     </main>

@@ -4,6 +4,10 @@ html{
 
 @import 'tailwindcss';
 
+:root{
+  background-color: #0f172b;
+  color: #f1f5f9;
+}
 
 .dashboard-wrapper {
   position: relative;
@@ -50,13 +54,10 @@ html{
   animation: scrollLeft 60s linear infinite;
 }
 
-.marquee-right {
-  display: flex;
-  width: max-content;
-  animation: scrollRight 60s linear infinite;
-}
 
-.marquee-left:hover,
-.marquee-right:hover {
+
+.marquee-left:hover{
   animation-play-state: paused;
 }
+
+

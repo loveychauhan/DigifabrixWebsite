@@ -12,9 +12,10 @@ const Navbar = () => {
 
   const NAV_ROUTES = [
     { label: "Solutions", to: "/solutions" },
-    { label: "OEE", to: "/solutions/oee" },
-    { label: "Features", to: "/features" },
-    { label: "Testimonials", to: "/testimonials" },
+    { label: "OEE", to: "/solutions/oee-monitoring-software" },
+    { label: "About", to: "/about" },
+    { label: "Blogs", to: "/Blog" },
+    { label: "Pricing", to: "/price" },
   ];
 
   const timeoutRef = useRef(null);
@@ -40,14 +41,14 @@ const Navbar = () => {
               />
             </div>
             <span
-              className={`text-2xl font-bold tracking-tight text-[rgb(0,86,169)] `}
+              className={`text-xl font-bold tracking-tight text-[rgb(0,86,169)] `}
             >
               Digifabrix
             </span>
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center justify-center space-x-8">
           {NAV_ROUTES.map((item) => {
             return (
               <div key={item.label}>
@@ -66,7 +67,7 @@ const Navbar = () => {
                     }}
                   >
                     <Link
-                      className="text-slate-500 hover:text-blue-500 font-medium transition-colors"
+                      className="text-slate-100 text-[12px] hover:text-slate-400 font-medium transition-colors"
                       to={item.to}
                     >
                       Solutions
@@ -78,7 +79,7 @@ const Navbar = () => {
                   <Link
                     key={item.label}
                     to={item.to.toLowerCase()}
-                    className="text-slate-500 relative text-sm hover:text-blue-500 font-medium transition-colors"
+                    className="text-slate-100 relative text-[12px]  hover:text-slate-400 font-medium transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -123,6 +124,6 @@ const Navbar = () => {
       )}
     </nav>
   );
-}; 
+};
 
 export default Navbar;
