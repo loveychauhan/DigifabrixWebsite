@@ -38,11 +38,6 @@ const CTASection = () => {
             </button>
           </a>
         </div>
-
-        {/* Trust Line */}
-        <p className="text-slate-400 text-sm mt-6">
-          No credit card required • Quick onboarding • Built for real shopfloors
-        </p>
       </div>
     </section>
   );

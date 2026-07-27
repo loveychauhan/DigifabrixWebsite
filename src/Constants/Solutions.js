@@ -11,7 +11,7 @@ import EMS from '../assets/EMS/HTM_device.png'
 export const SERVICES = [
     {
         index: "01",
-        title: "Shopfloor Digitization",
+        title: "Shopfloor Digitalization",
         tagline: "From clipboards to dashboards",
         desc: "Replace manual processes with digital workflows, real-time tracking, and operator-friendly interfaces built for the factory floor — not the office.",
         img: digital_shopfloor,
@@ -76,7 +76,7 @@ export const solutions = [
     {
         title: "Manufacturing Execution System (MES)",
         description:
-            "Digitize and control your entire production lifecycle from order to dispatch.",
+            "Digitalize and control your entire production lifecycle from order to dispatch.",
         features: [
             "Work order management", ,
             "Digital Production Recording",
@@ -136,7 +136,7 @@ export const solutions = [
             "Predictive maintenance",
             "Data analytics",
         ],
-        link: "/solutions/shopfloor-digitization",
+        link: "/solutions/shopfloor-digitalization",
         category: "Automation",
         image: automation,
     },

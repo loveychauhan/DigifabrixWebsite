@@ -21,19 +21,19 @@ const Home = () => {
 
         <meta
           name="description"
-          content="DigiFabrix provides OEE monitoring software, manufacturing execution systems (MES), shopfloor digitization and Industry 4.0 analytics for smart factories."
+          content="DigiFabrix helps manufacturers replace manual production tracking with digital shopfloor solutions, real-time production monitoring, MES, OEE monitoring and manufacturing analytics."
         />
 
         <link rel="canonical" href="https://digifabrix.com/" />
 
         <meta
           property="og:title"
-          content="OEE Monitoring Software & Shopfloor Digitization | DigiFabrix"
+          content="OEE Monitoring Software & Shopfloor Digitalization | DigiFabrix"
         />
 
         <meta
           property="og:description"
-          content="Smart factory platform for shopfloor digitization, manufacturing analytics and OEE monitoring."
+          content="Smart factory platform for shopfloor digitalization, manufacturing analytics and OEE monitoring."
         />
 
         <meta property="og:type" content="website" />
@@ -47,29 +47,42 @@ const Home = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="OEE Monitoring Software | DigiFabrix"
+          content="Shopfloor Digitalization Software | DigiFabrix"
         />
         <meta
           name="twitter:description"
-          content="Industry 4.0 platform for shopfloor digitization and manufacturing analytics."
+          content="Industry 4.0 platform for shopfloor digitalization and manufacturing analytics."
         />
         <meta
           name="twitter:image"
           content="https://digifabrix.com/og-image.png"
         />
 
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="DigiFabrix" />
+        <meta name="theme-color" content="#0F172A" />
+
         <script type="application/ld+json">
           {`
-            {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "DigiFabrix Manufacturing Platform",
-            "applicationCategory": "Manufacturing Software",
-            "operatingSystem": "Web",
-            "description": "Industry 4.0 platform for shopfloor digitization and OEE monitoring",
-            "url": "https://digifabrix.com"
-            }
-          `}
+            [
+              {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "DigiFabrix Manufacturing Platform",
+                "applicationCategory": "Manufacturing Software",
+                "operatingSystem": "Web",
+                "description": "Industry 4.0 platform for shopfloor digitization and OEE monitoring",
+                "url": "https://digifabrix.com"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "DigiFabrix",
+                "url": "https://digifabrix.com",
+                "logo": "https://digifabrix.com/logo.png"
+              }
+            ]
+            `}
         </script>
       </Helmet>
 
@@ -79,9 +92,8 @@ const Home = () => {
           <FadeUp className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="space-y-10 text-center">
               <h1 className="text-5xl lg:text-6xl font-bold ">
-                <span className="tracking-tight text-transparent px-2 bg-clip-text bg-gradient-to-r from-slate-50 to-blue-400">
-                  Still Managing Production with Spreadsheets?
-                </span>
+                Digitalize Your Shopfloor & <br /> Improve Manufacturing
+                Efficiency.
               </h1>
               <p className="text-slate-400 text-lg mx-auto max-w-2xl leading-relaxed">
                 DigiFabrix is an Industry 4.0 manufacturing platform that

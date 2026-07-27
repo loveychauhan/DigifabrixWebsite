@@ -35,13 +35,13 @@ const Navbar = () => {
           <div className="flex items-center gap-2 cursor-pointer">
             <div className=" p-1 rounded-lg">
               <img
-                className="h-8 w-8"
+                className="h-12 w-12"
                 src={favicon}
                 alt="DigiFabrix digital manufacturing platform logo"
               />
             </div>
             <span
-              className={`text-xl font-bold tracking-tight text-[rgb(0,86,169)] `}
+              className={`text-2xl font-bold tracking-tight text-[rgb(0,86,169)] `}
             >
               Digifabrix
             </span>
@@ -67,7 +67,7 @@ const Navbar = () => {
                     }}
                   >
                     <Link
-                      className="text-slate-100 text-[12px] hover:text-slate-400 font-medium transition-colors"
+                      className="text-slate-100 text-[14px] hover:text-slate-400 font-medium transition-colors"
                       to={item.to}
                     >
                       Solutions
@@ -79,7 +79,7 @@ const Navbar = () => {
                   <Link
                     key={item.label}
                     to={item.to.toLowerCase()}
-                    className="text-slate-100 relative text-[12px]  hover:text-slate-400 font-medium transition-colors"
+                    className="text-slate-100 relative text-[14px]  hover:text-slate-400 font-medium transition-colors"
                   >
                     {item.label}
                   </Link>

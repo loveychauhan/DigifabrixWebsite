@@ -8,6 +8,7 @@ import MANN_HUMMEL from "../../assets/BrandsLogo/MANN+HUMMEL.png";
 import Syrma_SGS from "../../assets/BrandsLogo/Syrma SGS.png";
 import TDK from "../../assets/BrandsLogo/TDK.png";
 import yazaki from "../../assets/BrandsLogo/yazaki.png";
+import Minda from "../../assets/BrandsLogo/Uno_minda.png";
 
 const brands = [
   Daikin,
@@ -20,6 +21,7 @@ const brands = [
   Syrma_SGS,
   TDK,
   yazaki,
+  Minda,
 ];
 
 const LogoCard = ({ src }) => {
@@ -44,7 +46,6 @@ const LogoCard = ({ src }) => {
         className="
         h-8
         object-contain
-        grayscale
         opacity-70
         transition
         hover:grayscale-0
