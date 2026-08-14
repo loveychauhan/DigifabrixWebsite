@@ -6,50 +6,16 @@ import What_Is_OEE from "../component/OEE/What_Is_OEE.jsx";
 import OEE_CTA from "../component/OEE/OEE_CTA.jsx";
 import OEE_HowItWorks from "../component/OEE/OEE_HowItWorks.jsx";
 import Shoopfloor_impact from "../component/OEE/Shoopfloor_impact.jsx";
+import SEO from "../component/SEO.jsx";
 
 export default function OEEMonitoring() {
   return (
     <>
-      <Helmet>
-        <title>
-          OEE Monitoring Software | Real-Time Production Analytics | DigiFabrix
-        </title>
-        <meta
-          name="description"
-          content="DigiFabrix OEE monitoring software tracks machine availability, performance and quality in real time. Reduce downtime, eliminate guesswork and improve factory efficiency with live dashboards."
-        />
-        <meta
-          name="keywords"
-          content="OEE monitoring, overall equipment effectiveness, manufacturing analytics, production dashboard, CNC monitoring, shop floor analytics, downtime analysis, digifabrix, MES software"
-        />
-        <link
-          rel="canonical"
-          href="https://www.digifabrix.com/oee-monitoring"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta
-          property="og:title"
-          content="OEE Monitoring Software | DigiFabrix"
-        />
-        <meta
-          property="og:description"
-          content="Track machine Availability, Performance and Quality in real time. DigiFabrix OEE monitoring for modern manufacturers."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.digifabrix.com/oee-monitoring"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="OEE Monitoring Software | DigiFabrix"
-        />
-        <meta
-          name="twitter:description"
-          content="Real-time OEE tracking for manufacturing — Availability × Performance × Quality, live from your shop floor."
-        />
-      </Helmet>
+      <SEO
+        title="OEE Monitoring Software for Manufacturing | DigiFabrix"
+        description="Monitor OEE, machine performance, downtime and production in real time with DigiFabrix OEE monitoring software."
+        canonical="https://digifabrix.com/solutions/oee-monitoring-software"
+      />
 
       <div className="bg-slate-950 text-white antialiased overflow-x-hidden">
         {/* ══════════════════════════════ HERO ════════════════════════════════ */}
@@ -66,14 +32,12 @@ export default function OEEMonitoring() {
                 </h1>
               </FadeUp>
 
-              <FadeUp delay={160}>
-                <p className="text-slate-100 max-w-3xl text-lg text-center leading-relaxed mb-8">
-                  DigiFabrix gives manufacturers live visibility into machine
-                  performance, prduction, quality and downtime. Track OEE across
-                  machines, shifts and factories from one dashboard —{" "}
-                  <i>no spreadsheets, no manual entry.</i>
-                </p>
-              </FadeUp>
+              <p className="text-slate-100 max-w-3xl mx-auto text-lg text-center leading-relaxed mb-8">
+                DigiFabrix gives manufacturers live visibility into machine
+                performance, production, quality and downtime. Track OEE across
+                machines, shifts and factories from one dashboard —{" "}
+                <i>no spreadsheets, no manual entry.</i>
+              </p>
 
               <FadeUp delay={240}>
                 <div className="flex justify-center flex-wrap gap-4 mb-12">

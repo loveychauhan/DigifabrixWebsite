@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import DashboardCarousel from "../component/DOJO/DashboardCarousel";
+import SEO from "../component/SEO";
 
 // ==================== METRIC CARD ====================
 const MetricCard = ({ value, label, sublabel, trend }) => {
@@ -18,6 +19,11 @@ const MetricCard = ({ value, label, sublabel, trend }) => {
 
 // ==================== MAIN COMPONENT ====================
 const DojoPage = () => {
+  <SEO
+    title="Workforce Intelligence Software for Manufacturing | DigiFabrix"
+    description="DigiFabrix DOJO helps manufacturers improve workforce productivity, monitor operations and build data-driven shopfloor performance with workforce intelligence."
+    canonical="https://digifabrix.com/solutions/dojo-workforce-intelligence"
+  />;
   return (
     <div className="bg-slate-950 text-slate-200">
       {/* ================= SEO ================= */}
@@ -31,7 +37,10 @@ const DojoPage = () => {
           name="keywords"
           content="manufacturing software, workforce management, manpower planning, industrial analytics"
         />
-        <link rel="canonical" href="https://yourdomain.com/dojo" />
+        <link
+          rel="canonical"
+          href="https://digifabrix.com/solutions/dojo-workforce-intelligence"
+        />
       </Helmet>
 
       {/* ================= HERO ================= */}

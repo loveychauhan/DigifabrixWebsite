@@ -10,8 +10,12 @@ const OperatorEngagement = () => {
           <div className="rounded-2xl overflow-hidden border border-slate-700 h-full">
             <img
               src={whatsappUpdate2}
-              alt="Operator mobile dashboard"
-              className="object-cover"
+              alt="DigiFabrix production and downtime alerts delivered to manufacturing teams on mobile"
+              width="900"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
             />
           </div>
 

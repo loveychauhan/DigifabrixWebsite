@@ -11,6 +11,7 @@ const Footer = () => {
               <img
                 src="/digifabrixLogo.png"
                 className="h-6 w-6 text-blue-600"
+                alt="DigiFabrix digital manufacturing platform logo"
               />
               <span className="text-xl font-bold text-[rgb(0,86,169)]">
                 Digifabrix

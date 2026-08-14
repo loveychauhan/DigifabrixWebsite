@@ -4,6 +4,7 @@ import { Users, Target, Lightbulb, Zap } from "lucide-react";
 // import carrerHeroImage from "../assets/featuresAssets/carrerHeroImage.jpeg";
 import carrerHeroImage from "/digifabrixLogo.svg";
 import digifabrixTeam from "../assets/digifabrixTeam.jpg";
+import SEO from "../component/SEO";
 
 const values = [
   {
@@ -45,6 +46,11 @@ const ValueCard = ({ icon: Icon, title, desc }) => (
 );
 
 export default function CareerPage() {
+  <SEO
+    title="Careers at DigiFabrix | Join Our Manufacturing Technology Team"
+    description="Join DigiFabrix and build the future of manufacturing with OEE, Industry 4.0, IoT, MES and shopfloor digitalization technologies."
+    canonical="https://digifabrix.com/career"
+  />;
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}

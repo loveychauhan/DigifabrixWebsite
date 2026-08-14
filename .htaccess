@@ -1,0 +1,20 @@
+# DigiFabrix - React/Vite SPA routing
+# Place this .htaccess in the same directory as index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Do not rewrite index.html itself
+    RewriteRule ^index\.html$ - [L]
+
+    # Do not rewrite existing files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Send all other routes to React
+    RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes

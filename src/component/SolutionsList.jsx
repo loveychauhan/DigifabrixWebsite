@@ -25,21 +25,21 @@ const SolutionsList = () => {
       to: "/solutions/oee-monitoring-software",
       icon: IconChartBarPopular,
     },
-    {
-      label: "Manufacturing Execution System (MES)",
-      to: "/solutions/manufacturing-execution-system",
-      icon: IconAssemblyFilled,
-    },
-    {
-      label: "Product Traceability System",
-      to: "/solutions/product-traceability",
-      icon: IconZoomExclamationFilled,
-    },
-    {
-      label: "Shopfloor Digitization Platform",
-      to: "/solutions/shopfloor-digitization",
-      icon: IconAiAgents,
-    },
+    // {
+    //   label: "Manufacturing Execution System (MES)",
+    //   to: "/solutions/manufacturing-execution-system",
+    //   icon: IconAssemblyFilled,
+    // },
+    // {
+    //   label: "Product Traceability System",
+    //   to: "/solutions/product-traceability",
+    //   icon: IconZoomExclamationFilled,
+    // },
+    // {
+    //   label: "Shopfloor Digitization Platform",
+    //   to: "/solutions/shopfloor-digitization",
+    //   icon: IconAiAgents,
+    // },
   ];
   return (
     <section

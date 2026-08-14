@@ -1,20 +1,16 @@
 import { Helmet } from "react-helmet-async";
+import WhyDigifabrix from "../component/Home/WhyDigifabrix";
+import SEO from "../component/SEO";
 
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>About | Manufacturing Intelligence Platform</title>
-        <meta
-          name="description"
-          content="Learn about our mission to digitize manufacturing with real-time insights, monitoring systems, and intelligent automation."
-        />
-        <meta
-          name="keywords"
-          content="about manufacturing software, industrial automation, MES, EMS, OEE"
-        />
-        <link rel="canonical" href="https://yourdomain.com/about" />
-      </Helmet>
+      <SEO
+        title="  About DigiFabrix | Shopfloor Digitalization Company in India"
+        description="Learn how DigiFabrix helps manufacturers digitalize shopfloor operations through OEE monitoring, MES, machine connectivity, environmental monitoring and Industry 4.0 solutions."
+        canonical="https://digifabrix.com/about"
+      />
+
       <div className="bg-slate-950 text-slate-200 px-6 py-24">
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Header */}
@@ -87,6 +83,8 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          <WhyDigifabrix />
 
           {/* CTA */}
           <div className="pt-10 border-t border-slate-800">

@@ -1,13 +1,12 @@
 "use client";
 
 import { IconArrowRight, IconCircleCheck, IconBolt } from "@tabler/icons-react";
-
 import HTM_device from "../assets/EMS/HTM_device.png";
-
 import BusinessImpact from "../component/EMS/BusinessImpact";
 import DashboardSection from "../component/EMS/DashboardSection";
 import SettingAndCustomization from "../component/EMS/SettingAndCustomization";
 import MonitoringDevice from "../component/EMS/MonitoringDevice";
+import SEO from "../component/SEO";
 
 const HeroImage = ({ src }) => (
   <img
@@ -18,6 +17,11 @@ const HeroImage = ({ src }) => (
 );
 
 export default function EnvironmentMonitoringSystem() {
+  <SEO
+    title="Environment Monitoring System for Manufacturing | DigiFabrix"
+    description="Monitor temperature, humidity and critical environmental conditions in real time with DigiFabrix's environment monitoring system for manufacturing facilities."
+    canonical="https://digifabrix.com/solutions/environment-monitoring-system"
+  />;
   return (
     <main className="">
       {/* ====================== HERO SECTION ====================== */}

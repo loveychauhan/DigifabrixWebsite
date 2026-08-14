@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { solutions } from "../Constants/Solutions";
 import LogoMarquee from "../component/Home/LogoMarquee";
+import SEO from "../component/SEO";
 
 const categories = [
   "All",
@@ -96,6 +97,12 @@ export default function SolutionsPage() {
     return solutions.filter((s) => s.category === activeCategory);
   }, [activeCategory]);
 
+  <SEO
+    title="Manufacturing Solutions | OEE, MES & Shopfloor Digitalization"
+    description="Explore DigiFabrix manufacturing solutions for OEE monitoring, MES, shopfloor digitalization, workforce intelligence and environmental monitoring."
+    canonical="https://digifabrix.com/solutions"
+  />;
+
   return (
     <div className="bg-slate-950 text-white min-h-screen">
       <Helmet>
@@ -122,12 +129,6 @@ export default function SolutionsPage() {
             A unified platform to monitor production, manage operations, and
             enable data-driven decisions across your factory.
           </p>
-
-          <p className="text-blue-500 text-sm mt-8">
-            Find the right solution for your plant
-          </p>
-
-          {/* CATEGORY TABS */}
         </div>
       </section>
 
