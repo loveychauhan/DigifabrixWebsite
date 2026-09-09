@@ -71,9 +71,9 @@ const IndustryCard = ({ industry, index }) => {
   const Icon = industry.icon;
 
   return (
-    <article className="group flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:bg-slate-900">
+    <article className="group flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900 p-6 transition duration-300  hover:border-slate-700 hover:bg-slate-900/90">
       <div className="mb-6 flex items-start justify-between gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-200 transition group-hover:border-slate-600 group-hover:text-white">
+        <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-whitetransition group-hover:border-slate-600 group-hover:text-white">
           <Icon size={22} stroke={1.6} />
         </div>
         <h3 className="text-xl font-semibold leading-snug text-white">
@@ -114,26 +114,24 @@ const IndustriesWeServe = () => {
     <section
       id="industries-we-serve"
       aria-labelledby="industries-heading"
-      className="bg-slate-950 py-20 text-white "
+      className="bg-black py-20 text-white "
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <FadeUp>
-          <div className="grid items-center  justify-center gap-2 border-b border-slate-800 pb-10  ">
-            <h2
-              id="industries-heading"
-              className="text-3xl max-w-3xl font-semibold leading-tight text-white md:text-4xl lg:text-3xl"
-            >
-              Manufacturing solutions designed for diverse industries
-            </h2>
+        <div className="grid items-center  justify-center gap-2 border-b border-slate-800 pb-10  ">
+          <h2
+            id="industries-heading"
+            className="text-3xl max-w-3xl font-semibold leading-tight text-white md:text-4xl lg:text-3xl"
+          >
+            Manufacturing solutions designed for diverse industries
+          </h2>
 
-            <p className=" max-w-3xl text-center leading-7 text-slate-400 ">
-              DigiFabrix helps automotive, FMCG, textile, electronics, and
-              battery manufacturers digitalize shopfloor operations with
-              real-time production monitoring, OEE analysis, automated
-              reporting, and end-to-end manufacturing traceability.
-            </p>
-          </div>
-        </FadeUp>
+          <p className=" max-w-3xl text-center leading-7 text-slate-400 ">
+            DigiFabrix helps automotive, FMCG, textile, electronics, and battery
+            manufacturers digitalize shopfloor operations with real-time
+            production monitoring, OEE analysis, automated reporting, and
+            end-to-end manufacturing traceability.
+          </p>
+        </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-6">
           {industries.map((industry, index) => (

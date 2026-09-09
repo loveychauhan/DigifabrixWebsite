@@ -1,12 +1,9 @@
-"use client";
-
 import {
   IconChartAreaLine,
   IconBell,
   IconDatabaseFilled,
   IconAiAgents,
   IconEyeFilled,
-  IconRoute,
 } from "@tabler/icons-react";
 import { FadeUp } from "../../Constants/Oee_constants";
 
@@ -44,9 +41,9 @@ const benefits = [
 const BenefitCard = ({ icon: Icon, title, desc, className = "" }) => {
   return (
     <article
-      className={`flex flex-col rounded-lg border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:border-slate-700 ${className}`}
+      className={`flex h-full flex-col rounded-lg border border-slate-800 bg-black p-6 transition duration-300 hover:border-slate-700 ${className}`}
     >
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-slate-800">
+      <div className="mb-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-slate-800">
         <Icon className="text-blue-500" size={18} stroke={1.7} />
       </div>
 
@@ -64,7 +61,7 @@ const DigifabrixHomeIntro = () => {
     <section
       id="business-benefits"
       aria-labelledby="business-benefits-heading"
-      className="bg-slate-950 pb-20 text-white"
+      className="bg-slate-900 py-20 text-white"
     >
       <div className="mx-auto max-w-6xl px-6">
         <FadeUp>
@@ -76,7 +73,7 @@ const DigifabrixHomeIntro = () => {
               Business benefits of shopfloor digitalization
             </h2>
 
-            <p className="mt-5 text-base leading-7 text-slate-400">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400">
               DigiFabrix turns real-time manufacturing data into measurable
               improvements in production visibility, downtime control,
               productivity, reporting, traceability, and decision-making.
@@ -91,7 +88,7 @@ const DigifabrixHomeIntro = () => {
               delay={index * 60}
               className={benefit.className}
             >
-              <BenefitCard {...benefit} className="h-full" />
+              <BenefitCard {...benefit} />
             </FadeUp>
           ))}
         </div>

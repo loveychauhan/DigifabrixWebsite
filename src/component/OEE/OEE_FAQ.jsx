@@ -41,7 +41,6 @@ const OEE_FAQ = () => {
     <section id="faq" className="py-20 bg-slate-900">
       <div className="max-w-3xl mx-auto px-6">
         <FadeUp className="text-center mb-12">
-          <SectionTag>FAQ</SectionTag>
           <h2 className="text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>

@@ -25,10 +25,10 @@ const Home = () => {
 
       <main className="bg-slate-900">
         {/* ==================== HERO SECTION ==================== */}
-        <section id="home" className="xl:py-32 py-24">
+        <section id="home" className=" py-24">
           <FadeUp className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="space-y-10 text-center">
-              <h1 className="text-5xl lg:text-6xl font-bold ">
+              <h1 className="text-5xl lg:text-6xl font-bold mt-12">
                 Digitalize Your Shopfloor & <br /> Improve Manufacturing
                 Efficiency.
               </h1>

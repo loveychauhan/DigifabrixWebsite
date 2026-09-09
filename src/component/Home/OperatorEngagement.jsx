@@ -3,7 +3,7 @@ import whatsappUpdate2 from "../../assets/mobileUpdate/whatsappUpdate2.jpg";
 
 const OperatorEngagement = () => {
   return (
-    <section className="py-24">
+    <section className="py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center justify-center">
           {/* Visual Side */}

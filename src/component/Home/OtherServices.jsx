@@ -1,7 +1,7 @@
 "use client";
+
 import { useState, useRef, useEffect } from "react";
 import { SERVICES } from "../../Constants/Solutions";
-
 
 // Crossfade image — fades old out, new in
 function ServiceImage({ src, alt }) {
@@ -11,22 +11,25 @@ function ServiceImage({ src, alt }) {
 
   useEffect(() => {
     if (src === displayed) return;
+
     setFading(true);
     clearTimeout(timer.current);
+
     timer.current = setTimeout(() => {
       setDisplayed(src);
       setFading(false);
     }, 220);
+
     return () => clearTimeout(timer.current);
-  }, [src]);
+  }, [src, displayed]);
 
   return (
-    <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl bg-slate-900">
+    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-slate-950">
       <img
         key={displayed}
         src={displayed}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         style={{
           transition: "opacity 220ms ease",
           opacity: fading ? 0 : 1,
@@ -41,86 +44,95 @@ export default function OtherServices() {
   const current = SERVICES[active];
 
   return (
-    <section className="py-20 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="overflow-hidden bg-slate-900 py-20 text-white">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl 2xl:text-4xl text-center mx-auto font-bold text-white leading-tight max-w-3xl ">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-medium leading-tight md:text-4xl">
             End-to-end solutions for modern manufacturing
           </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400">
+            Explore the digital manufacturing solutions DigiFabrix provides to
+            improve production visibility, efficiency, and control.
+          </p>
         </div>
-        <p className="text-slate-400 font-light text-[12px] ml-5 my-2">Our Services</p>
+
         {/* Main layout */}
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 items-start">
+        <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
           {/* LEFT — service selector */}
-          <div className="space-y-1">
-            {SERVICES.map((s, i) => {
-              const isActive = active === i;
+          <div className="space-y-3">
+            <p className="mb-4 text-sm font-medium text-slate-300">
+              Our Services
+            </p>
+
+            {SERVICES.map((service, index) => {
+              const isActive = active === index;
+
               return (
                 <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`group w-full text-left px-5 py-5 rounded-xl transition-all duration-200 ${
+                  key={index}
+                  onClick={() => setActive(index)}
+                  className={`group w-full rounded-lg border p-5 text-left transition duration-300 ${
                     isActive
-                      ? "bg-slate-900 border border-slate-700"
-                      : "border border-transparent hover:bg-slate-900/50"
+                      ? "border-slate-700 bg-slate-950"
+                      : "border-slate-800 bg-slate-950/50 hover:border-slate-700 hover:bg-slate-950"
                   }`}
                 >
                   <div className="flex items-start gap-4">
                     {/* Number */}
                     <span
-                      className={`text-xs font-mono pt-0.5 w-5 flex-shrink-0 transition-colors duration-200 ${
-                        isActive ? "text-cyan-400" : "text-slate-200"
+                      className={`w-5 shrink-0 pt-0.5 font-mono text-xs transition-colors ${
+                        isActive ? "text-blue-500" : "text-slate-500"
                       }`}
                     >
-                      {s.index}
+                      {service.index}
                     </span>
 
-                    <div className="flex-1 min-w-0">
+                    <div className="min-w-0 flex-1">
                       {/* Title row */}
-                      <div className="flex items-center justify-between gap-3 mb-1">
+                      <div className="mb-2 flex items-center justify-between gap-3">
                         <p
-                          className={`font-semibold text-base transition-colors duration-200 ${
+                          className={`text-base font-medium leading-snug transition-colors md:text-lg ${
                             isActive
                               ? "text-white"
-                              : "text-slate-100 group-hover:text-slate-200"
+                              : "text-slate-200 group-hover:text-white"
                           }`}
                         >
-                          {s.title}
+                          {service.title}
                         </p>
+
                         <span
-                          className={`text-xs px-2 py-0.5 rounded-full flex-shrink-0 transition-all duration-200 ${
+                          className={`shrink-0 rounded-md border px-2 py-1 text-xs transition-colors ${
                             isActive
-                              ? "bg-cyan-400/15 text-cyan-300 border border-cyan-400/25"
-                              : "bg-slate-800 text-slate-100 border border-transparent"
+                              ? "border-slate-700 bg-slate-900 text-blue-400"
+                              : "border-slate-800 bg-slate-900 text-slate-400"
                           }`}
                         >
-                          {s.tag}
+                          {service.tag}
                         </span>
                       </div>
 
-                      {/* Tagline — always visible */}
-                      <p
-                        className={`text-sm transition-colors duration-200 ${
-                          isActive ? "text-slate-100" : "text-slate-200"
-                        }`}
-                      >
-                        {s.tagline}
+                      {/* Tagline */}
+                      <p className="text-sm leading-relaxed text-slate-400">
+                        {service.tagline}
                       </p>
 
                       {/* Expanded content */}
                       <div
                         className="overflow-hidden transition-all duration-300 ease-in-out"
-                        style={{ maxHeight: isActive ? "120px" : "0" }}
+                        style={{
+                          maxHeight: isActive ? "120px" : "0",
+                        }}
                       >
-                        <ul className="mt-3 space-y-1.5">
-                          {s.bullets.map((b) => (
+                        <ul className="mt-4 space-y-2">
+                          {service.bullets.map((bullet) => (
                             <li
-                              key={b}
-                              className="flex items-center gap-2 text-xs text-slate-200"
+                              key={bullet}
+                              className="flex items-center gap-2 text-sm leading-relaxed text-slate-400"
                             >
-                              <span className="w-1 h-1 rounded-full bg-cyan-500 flex-shrink-0" />
-                              {b}
+                              <span className="h-1 w-1 shrink-0 rounded-full bg-blue-500" />
+                              {bullet}
                             </li>
                           ))}
                         </ul>
@@ -133,26 +145,23 @@ export default function OtherServices() {
           </div>
 
           {/* RIGHT — image + description */}
-          <div className="lg:sticky lg:top-28 space-y-6">
+          <div className="space-y-6 lg:sticky lg:top-28">
             <ServiceImage src={current.img} alt={current.title} />
 
-            <div className="space-y-4 px-1">
+            <div className="space-y-4">
               <div className="flex items-baseline gap-3">
-                <span className="text-xs font-mono text-slate-600">
-                  {current.index}
-                </span>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-medium leading-snug text-white">
                   {current.title}
                 </h3>
               </div>
 
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-base leading-7 text-slate-400">
                 {current.desc}
               </p>
 
               <a
                 href="/solutions"
-                className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-blue-500 transition-colors hover:text-blue-400"
               >
                 Learn more about {current.title}
                 <svg
@@ -160,7 +169,7 @@ export default function OtherServices() {
                   height="14"
                   fill="none"
                   viewBox="0 0 24 24"
-                  className="group-hover:translate-x-0.5 transition-transform duration-200"
+                  className="transition-transform duration-200 group-hover:translate-x-0.5"
                 >
                   <path
                     d="M5 12h14M13 6l6 6-6 6"

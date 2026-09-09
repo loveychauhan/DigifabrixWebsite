@@ -98,7 +98,7 @@ const FAQSection = () => {
     <section
       id="frequently-asked-questions"
       aria-labelledby="faq-heading"
-      className="border-t border-slate-800 bg-slate-950 py-20 text-white"
+      className="border-t border-slate-800 bg-black py-20 text-white"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="">

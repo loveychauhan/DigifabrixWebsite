@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import WhyDigifabrix from "../component/Home/WhyDigifabrix.jsx";
 import OEE_FAQ from "../component/OEE/OEE_FAQ.jsx";
 import { FadeUp } from "../Constants/Oee_constants.jsx";
 import What_Is_OEE from "../component/OEE/What_Is_OEE.jsx";
@@ -19,7 +18,7 @@ export default function OEEMonitoring() {
 
       <div className="bg-slate-950 text-white antialiased overflow-x-hidden">
         {/* ══════════════════════════════ HERO ════════════════════════════════ */}
-        <section className=" py-32 overflow-hidden">
+        <section className=" py-24 overflow-hidden">
           <div className=" 2xl:max-w-5xl max-w-4xl  mx-auto px-6 w-full text-center">
             <div>
               <FadeUp delay={80}>
@@ -63,10 +62,6 @@ export default function OEEMonitoring() {
 
         {/* ═══════════════════════════ HOW IT WORKS ═══════════════════════════ */}
         <OEE_HowItWorks />
-
-        {/* ═══════════════════════════ WHY DIGIFABRIX ═════════════════════════ */}
-
-        <WhyDigifabrix />
 
         {/* ═══════════════════════════════ FAQ ════════════════════════════════ */}
 

@@ -4,7 +4,6 @@ const OEE_HowItWorks = () => {
   return (
     <section className="py-20 bg-slate-900">
       <div className="max-w-5xl mx-auto px-6 text-center ">
-        <SectionTag>How It Works</SectionTag>
         <h2 className="text-4xl font-bold text-white mb-5">
           Up and Running in One Shift
         </h2>
@@ -17,11 +16,6 @@ const OEE_HowItWorks = () => {
             <div
               className={`relative bg-slate-950 border ${s.border} rounded-2xl p-6 overflow-hidden hover:-translate-y-1 transition-transform duration-300`}
             >
-              <span
-                className={`text-6xl font-bold ${s.color} opacity-10 absolute top-3 right-4 select-none`}
-              >
-                {s.step}
-              </span>
               <p
                 className={`text-xs font-bold uppercase tracking-widest ${s.color} mb-3`}
               >

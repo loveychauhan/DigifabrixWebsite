@@ -79,7 +79,7 @@ const HowItWorks = () => {
   const smoothX = useSpring(x, { stiffness: 90, damping: 20 });
 
   return (
-    <section className="bg-slate-900 text-white px-3">
+    <section className="bg-black text-white px-3">
       {/* Scroll Container */}
       <div
         ref={containerRef}
@@ -89,8 +89,10 @@ const HowItWorks = () => {
         <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
           {/* Heading */}
           <div className=" 2xl:pt-28 2xl:pb-10 pt-20 pb-4 text-center px-6">
-            <h2 className="text-5xl font-semibold">How It Works</h2>
-            <p className="mt-6 text-lg text-slate-100 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-medium leading-tight md:text-4xl">
+              How It Works
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-400">
               A structured implementation process designed for seamless
               integration into your manufacturing environment.
             </p>
@@ -109,7 +111,7 @@ const HowItWorks = () => {
                   key={step.number}
                   className="flex-shrink-0 w-[60vw] max-w-[800px]"
                 >
-                  <div className="rounded-2xl border border-slate-700 bg-slate-950  px-10 py-6 transition hover:border-slate-600">
+                  <div className="rounded-2xl border border-slate-700 bg-slate-900  px-10 py-6 transition hover:border-slate-600">
                     {/* STEP */}
                     <span className="text-xs tracking-[0.2em] text-slate-500">
                       STEP {step.number}

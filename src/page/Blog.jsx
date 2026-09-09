@@ -30,7 +30,7 @@ const Blog = () => {
           {BlogConstant.map((post) => (
             <Link
               key={post.slug}
-              to={post.slug}
+              to={`/blog/${post.slug}`}
               className="group block border-b border-slate-800 py-10 first:pt-0"
             >
               <div className="flex flex-col gap-3">
@@ -45,7 +45,7 @@ const Blog = () => {
                 </h2>
 
                 <p className="max-w-3xl text-sm leading-6 text-slate-400">
-                  {post.desc}
+                  {post.excerpt}
                 </p>
 
                 <span className="mt-2 text-sm font-medium text-slate-300">
