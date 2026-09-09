@@ -2,14 +2,13 @@ import { useState } from "react";
 import HowItWorks from "../component/Home/HowItWorks";
 import OperatorEngagement from "../component/Home/OperatorEngagement";
 import CTASection from "../component/Home/CTASection";
-import { Helmet } from "react-helmet-async";
 import LogoMarquee from "../component/Home/LogoMarquee";
 import DigifabrixHomeIntro from "../component/Home/DigifabrixHomeIntro";
 import OtherServices from "../component/Home/OtherServices";
 import { FadeUp } from "../Constants/Oee_constants";
 import ManufacturingChallenges from "../component/Home/ManufacturingChallenges";
 import IndustriesWeServe from "../component/Home/IndustriesWeServe";
-import FAQSection from "../component/Home/FaqSection";
+import FAQSection from "../component/Home/FAQSection";
 import SEO from "../component/SEO";
 
 const Home = () => {
